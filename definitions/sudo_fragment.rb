@@ -4,7 +4,7 @@
 #
 # Copyright 2011, ActBlue
 
-define :sudo_fragment, :enable => true, source => "sudoers.erb" do
+define :sudo_fragment, :enable => true, :source => "sudoers.erb" do
   include_recipe "sudo"
 
   template "#{node[:sudo][:directory]}/#{params[:name]}" do
