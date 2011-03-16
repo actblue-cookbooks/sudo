@@ -5,8 +5,8 @@
 ## Don't edit it on your own
 ##
 
-Defaults        env_reset
-Defaults        env_keep+="http_proxy"
-Defaults        syslog=auth, syslog_badpri=alert, syslog_goodpri=notice
+<% node[:sudo][:options].each do |OPT| -%>
+Defaults        <%= OPT %>
+<% end -%>
 
 #includedir <%= node[:sudo][:directory] %>

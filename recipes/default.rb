@@ -17,7 +17,7 @@ template "/etc/sudoers" do
 end
 
 directory node[:sudo][:directory] do
-  mode 0440
+  mode 0750
   owner "root"
   group "root"
   action :create

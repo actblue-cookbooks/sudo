@@ -1,4 +1,9 @@
-default[:sudo][:directory] = "/etc/sudoers.d"
 default[:sudo][:action] = :upgrade
+default[:sudo][:directory] = "/etc/sudoers.d"
+default[:sudo][:options] = [ "env_reset",
+                             'env_keep+="http_proxy"',
+                             'syslog=auth',
+                             'syslog_badpri=alert',
+                             'syslog_goodpri=notice']
 default[:sudo][:root_groups] = ["wheel"]
 default[:sudo][:root_users] = ["ecloud"]
