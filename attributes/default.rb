@@ -1,4 +1,4 @@
-default[:sudo][:directory] = "/tmp/sudo-test"
+default[:sudo][:directory] = "/etc/sudoers.d"
 default[:sudo][:action] = :upgrade
 default[:sudo][:root_groups] = ["wheel"]
-default[:sudo][:root_users] = ["seph"]
+default[:sudo][:root_users] = ["ecloud"]
