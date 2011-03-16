@@ -9,12 +9,12 @@ package "sudo" do
   action node[:sudo][:action]
 end
 
-#template "/etc/sudoers" do
-#  source "sudoers.erb"
-#  mode 0440
-#  owner "root"
-#  group "root"
-#end
+template "/etc/sudoers" do
+  source "sudoers.erb"
+  mode 0440
+  owner "root"
+  group "root"
+end
 
 directory node[:sudo][:directory] do
   mode 0440
@@ -23,12 +23,6 @@ directory node[:sudo][:directory] do
   action :create
 end
 
-#template "/etc/sudoers.d/root.sudoers" do
-#  source "sudoers.erb"
-#  mode 0440
-#  owner "root"
-#  group "root"
-#end
 sudo_fragment "root" do
   source "root.sudoers.erb"
 end
