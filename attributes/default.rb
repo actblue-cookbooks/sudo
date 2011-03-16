@@ -2,6 +2,7 @@ default[:sudo][:action] = :upgrade
 default[:sudo][:directory] = "/etc/sudoers.d"
 default[:sudo][:options] = [ "env_reset",
                              'env_keep+="http_proxy"',
+                             'env_keep+=SSH_AUTH_SOCK',
                              'syslog=auth',
                              'syslog_badpri=alert',
                              'syslog_goodpri=notice']
