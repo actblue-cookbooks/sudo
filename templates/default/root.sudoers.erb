@@ -1,0 +1,13 @@
+# Give root permission
+root    ALL=(ALL) ALL
+
+# Give the various groups unrestricted sudo permission
+<% node[:sudo][:root_groups].each do |GROUP| -%> 
+%<%= GROUP %> ALL=(ALL) ALL
+<% end -%>
+
+# Give various users unrestricted root permission
+<% node[:sudo][:root_users].each do |USER| -%> 
+<%= USER %> ALL=(ALL) ALL
+<% end -%>
+
