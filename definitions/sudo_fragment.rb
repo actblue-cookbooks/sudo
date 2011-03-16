@@ -7,7 +7,7 @@
 define :sudo_fragment, :enable => true do
   include_recipe "sudo"
 
-  template "#{node[:sudo][:directory]}/#{params[:name]}.sudoers" do
+  template "#{node[:sudo][:directory]}/#{params[:name]}" do
     mode 0440
     owner "root"
     group "root"

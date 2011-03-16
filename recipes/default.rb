@@ -16,6 +16,13 @@ end
 #  group "root"
 #end
 
+directory node[:sudo][:directory] do
+  mode 0440
+  owner "root"
+  group "root"
+  action :create
+end
+
 #template "/etc/sudoers.d/root.sudoers" do
 #  source "sudoers.erb"
 #  mode 0440
@@ -23,5 +30,5 @@ end
 #  group "root"
 #end
 sudo_fragment "root" do
-  source "sudoers.erb"
+  source "root.sudoers.erb"
 end
