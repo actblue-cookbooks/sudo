@@ -23,6 +23,6 @@ directory node[:sudo][:directory] do
   action :create
 end
 
-sudo_fragment "root" do
+sudo_fragment "000root" do
   source "root.sudoers.erb"
 end
