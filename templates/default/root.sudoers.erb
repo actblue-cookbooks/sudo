@@ -1,14 +1,17 @@
-# Give root permission
+# We'd like to preserve audit trails. So make it harder to
+# accidentally compromise them.
 Cmnd_Alias   ROOT_EXCLUDES = <%= node[:sudo][:root_exclude].join(",") %>
+
+# Give root permission
 root    ALL=(ALL) ALL, !ROOT_EXCLUDES
 
 # Give the various groups unrestricted sudo permission
 <% node[:sudo][:root_groups].each do |GROUP| -%> 
-%<%= GROUP %> ALL=(ALL) ALL
+%<%= GROUP %> ALL=(ALL) ALL, !ROOT_EXCLUDES
 <% end -%>
 
 # Give various users unrestricted root permission
 <% node[:sudo][:root_users].each do |USER| -%> 
-<%= USER %> ALL=(ALL) ALL
+<%= USER %> ALL=(ALL) ALL, !ROOT_EXCLUDES
 <% end -%>
 
