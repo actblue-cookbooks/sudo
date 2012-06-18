@@ -9,3 +9,17 @@ default[:sudo][:options] = [ "env_reset",
                              'syslog_goodpri=notice']
 default[:sudo][:root_groups] = ["wheel"]
 default[:sudo][:root_users] = ["ecloud"]
+
+# commands we want to deny root's ALL entry for. This is mostly to try
+# to enforce honest mistakes about avoid the audit trail. A determined
+# attacker will be able to bypass this.
+default[:sudo][:root_exclude] = [
+                                 "/bin/bash",
+                                 "/bin/dash",
+                                 "/bin/rbash",
+                                 "/bin/sh",
+                                 "/bin/static-sh",
+                                 "/sbin/sulogin",
+                                 "/bin/su",
+                                 "/sbin/su",
+                                ] 
