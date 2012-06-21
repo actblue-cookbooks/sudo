@@ -21,5 +21,6 @@ default[:sudo][:root_exclude] = [
                                  "/bin/static-sh",
                                  "/sbin/sulogin",
                                  "/bin/su",
+                                 "/usr/bin/sudo",
                                  "/sbin/su",
                                 ] 
