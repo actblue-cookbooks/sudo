@@ -6,12 +6,12 @@ Cmnd_Alias   ROOT_EXCLUDES = <%= node[:sudo][:root_exclude].sort.join(",") %>
 root    ALL=(ALL) ALL
 
 # Give the various groups unrestricted sudo permission
-<% node[:sudo][:root_groups].each do |GROUP| -%> 
-%<%= GROUP %> ALL=(ALL) ALL, !ROOT_EXCLUDES
+<% node[:sudo][:root_groups].each do |group| -%>
+%<%= group %> ALL=(ALL) ALL, !ROOT_EXCLUDES
 <% end -%>
 
 # Give various users unrestricted root permission
-<% node[:sudo][:root_users].each do |USER| -%> 
-<%= USER %> ALL=(ALL) ALL, !ROOT_EXCLUDES
+<% node[:sudo][:root_users].each do |user| -%>
+<%= user %> ALL=(ALL) ALL, !ROOT_EXCLUDES
 <% end -%>
 

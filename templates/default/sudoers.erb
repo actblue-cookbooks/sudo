@@ -5,8 +5,8 @@
 ## Don't edit it on your own
 ##
 
-<% node[:sudo][:options].each do |OPT| -%>
-Defaults        <%= OPT %>
+<% node[:sudo][:options].each do |opt| -%>
+Defaults        <%= opt %>
 <% end -%>
 
 #includedir <%= node[:sudo][:directory] %>
