@@ -1,2 +1,3 @@
-description "sudo"
-version "0.0.1"
+name 'sudo'
+description 'sudo'
+version '0.0.1'
