@@ -14,13 +14,8 @@ default[:sudo][:root_users] = ["ecloud"]
 # to enforce honest mistakes about avoid the audit trail. A determined
 # attacker will be able to bypass this.
 default[:sudo][:root_exclude] = [
-                                 "/bin/bash",
-                                 "/bin/dash",
-                                 "/bin/rbash",
-                                 "/bin/sh",
-                                 "/bin/static-sh",
-                                 "/sbin/sulogin",
-                                 "/bin/su",
-                                 "/usr/bin/sudo",
-                                 "/sbin/su",
-                                ] 
+                                  "/bin/dash",
+                                  "/sbin/sulogin",
+                                  "/bin/static-sh",
+                                  "/bin/rbash",
+                                ]
